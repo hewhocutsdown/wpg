@@ -61,7 +61,11 @@ function isAvailableOn(entry, date) {
     }
 
     case "scheduled":
-      return a.occurrences.some((o) => startOfDay(new Date(o.start)).getTime() === day.getTime());
+      return a.occurrences.some((o) => {
+        const start = startOfDay(new Date(o.start));
+        const end = o.end ? startOfDay(new Date(o.end)) : start;
+        return day >= start && day <= end;
+      });
 
     default:
       return false;
@@ -91,6 +95,13 @@ function nextOccurrence(entry, fromDate) {
   }
 
   if (a.kind === "scheduled") {
+    const current = a.occurrences.find((o) => {
+      const start = startOfDay(new Date(o.start));
+      const end = o.end ? startOfDay(new Date(o.end)) : start;
+      return from >= start && from <= end;
+    });
+    if (current) return { date: from, label: current.label || entry.name, ongoing: true };
+
     const upcoming = a.occurrences
       .map((o) => ({ date: new Date(o.start), label: o.label || entry.name }))
       .filter((o) => o.date >= from)

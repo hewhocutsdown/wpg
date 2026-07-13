@@ -205,6 +205,16 @@ main {
   border-color: #6b4f1f;
 }
 
+.followup-note {
+  background: #2a2114;
+  border: 1px solid #6b4f1f;
+  color: #e0a34f;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  margin: 0.5rem 0 0;
+}
+
 .timeline-group {
   margin-bottom: 1.75rem;
 }

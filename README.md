@@ -4,11 +4,12 @@ A directory of free and low-cost services, culture, events, and recreation
 within **4km of the Canadian Museum for Human Rights**, Winnipeg. Inspired
 by [kc.cjohnson.io/resources](https://kc.cjohnson.io/resources/).
 
-Three views over the same dataset:
+Four views over the same dataset:
 
 - `index.html` — filterable list, sorted by distance
 - `map/index.html` — Leaflet map with a 4km radius overlay
 - `timeline.html` — agenda view: what's ongoing now, and what's coming up
+- `followup.html` — punch list of entries with missing/unconfirmed info
 
 No build step. It's static HTML/CSS/JS that fetches `data/entries.json`.
 
@@ -51,9 +52,9 @@ python3 -m http.server 8000
 }
 ```
 
-Distance from the museum is computed automatically at load time. Four
-placeholder entries (one per meta-category) demonstrate the shape —
-replace them with verified data as you go.
+Distance from the museum is computed automatically at load time. A few
+`example-*` placeholder entries demonstrate the shape of each
+`availability.kind` — replace them with verified data as you go.
 
 ### `availability` — the timeline feature
 
@@ -77,6 +78,26 @@ can act on it. Prefer verifying hours/cost/address/dates by checking the
 organization's own site or calling ahead over copying from a secondhand
 source. Set `verified: true` and `lastVerified` (ISO date) once you've
 confirmed a listing; unverified entries are flagged in the UI.
+
+### Incomplete entries: `followUp` and `symbolicLocation`
+
+Two optional fields exist for entries added from an incomplete source
+(a photographed poster, a secondhand mention) rather than a confirmed
+address/date:
+
+- `"followUp": "what's missing and what to do about it"` — any entry
+  with this set shows a flagged note in the UI and appears on the
+  **Follow-up** page (`followup.html`), so incomplete entries don't get
+  lost in the main list/map/timeline.
+- `"symbolicLocation": true` — marks `lat`/`lng` as a placeholder, not
+  a real confirmed point (e.g. a citywide festival with no single venue,
+  or a venue whose address isn't known yet). Renders as a dashed circle
+  on the map instead of a pin, and as an "Approximate/placeholder
+  location" tag on cards, so it's never mistaken for a real address.
+
+These are independent — an entry can have a confirmed real address but
+still need a date confirmed (`followUp` only), or have no confirmed
+location at all (`followUp` + `symbolicLocation` together).
 
 ## Personal interest overlay
 

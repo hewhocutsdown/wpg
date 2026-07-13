@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winnipeg Resources — Follow-up</title>
+  <meta name="description" content="Entries with missing or unconfirmed information that need follow-up." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Winnipeg Resources</a>
+    <nav>
+      <a href="index.html">List</a>
+      <a href="map/index.html">Map</a>
+      <a href="timeline.html">Timeline</a>
+      <a href="followup.html" class="active">Follow-up</a>
+    </nav>
+    <div class="interest-io">
+      <button id="export-interests" class="io-btn" type="button">Export interests</button>
+      <label class="io-btn" for="import-interests">Import interests</label>
+      <input type="file" id="import-interests" accept="application/json" hidden />
+    </div>
+  </header>
+
+  <main>
+    <p class="tagline">
+      Entries with missing addresses, unconfirmed dates/times, or placeholder
+      locations — a punch list to work through and clean up.
+    </p>
+
+    <p class="resource-count" id="resource-count">Loading…</p>
+    <div class="resource-list" id="resource-list"></div>
+  </main>
+
+  <footer class="site-footer">
+    Built for Winnipeg. Data should be verified before relying on it —
+    see the <a href="https://github.com/hewhocutsdown/wpg">source repo</a> to contribute.
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/availability.js"></script>
+  <script src="js/interests.js"></script>
+  <script src="js/followup.js"></script>
+</body>
+</html>

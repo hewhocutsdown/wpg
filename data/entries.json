@@ -10,7 +10,7 @@
     {
       "id": "services",
       "name": "Essential Services",
-      "categories": ["Shelter", "Meal", "Library", "Washroom", "Shower", "Health", "Warming Centre", "Coworking"]
+      "categories": ["Shelter", "Meal", "Library", "Washroom", "Shower", "Health", "Warming Centre", "Coworking", "Employment Support"]
     },
     {
       "id": "culture",
@@ -20,7 +20,7 @@
     {
       "id": "events",
       "name": "Live Events & Entertainment",
-      "categories": ["Concert", "Festival", "Theatre", "Comedy", "Film"]
+      "categories": ["Concert", "Festival", "Theatre", "Comedy", "Film", "Community Event"]
     },
     {
       "id": "recreation",
@@ -93,27 +93,744 @@
       }
     },
     {
-      "id": "example-event",
-      "name": "Example Festival Showing — replace with verified data",
+      "id": "ccfm-le-patio-340",
+      "name": "Le Patio 340 — Jeudis Franco / Franco Thursdays",
       "metaCategory": "events",
-      "category": "Festival",
-      "address": "333 Placeholder Blvd, Winnipeg, MB",
-      "lat": 49.8896,
-      "lng": -97.1508,
-      "cost": "$15",
-      "amenities": [],
+      "category": "Community Event",
+      "address": "340 Blvd Provencher, Winnipeg, MB",
+      "lat": 49.889,
+      "lng": -97.1213,
+      "cost": "Free",
+      "amenities": ["Free"],
       "phone": "",
       "website": "",
-      "notes": "Template for a one-off/short-run event (kind: scheduled). Duplicate and fill in verified details.",
+      "notes": "Bilingual community evenings on the patio at the Centre culturel franco-manitobain (CCFM), from a poster photographed on-site. Activities vary by week (games, French conversation practice, workshops, live music) — see occurrence labels. No event was listed for July 16. Coordinates are an estimate from the street address — pin needs confirming.",
       "verified": false,
       "lastVerified": null,
       "availability": {
         "kind": "scheduled",
         "occurrences": [
-          { "start": "2026-07-13T19:00", "end": "2026-07-13T21:00", "label": "Opening night" },
-          { "start": "2026-07-25T19:00", "end": "2026-07-25T21:00", "label": "Second showing" },
-          { "start": "2026-09-01T19:00", "end": "2026-09-01T21:00", "label": "Closing night" }
+          { "start": "2026-06-18T18:00", "end": "2026-06-18T18:00", "label": "Horseshoe tournament" },
+          { "start": "2026-06-18T21:30", "end": "2026-06-18T21:30", "label": "Screening: Le Monde de Gabrielle Roy (presented by Radio-Canada)" },
+          { "start": "2026-06-25T19:00", "end": "2026-06-25T19:00", "label": "Café conversation" },
+          { "start": "2026-07-02T18:00", "end": "2026-07-02T18:00", "label": "Learn French with l'USB (introductions, numbers)" },
+          { "start": "2026-07-02T18:30", "end": "2026-07-02T18:30", "label": "Atelier bijoux (jewelry workshop)" },
+          { "start": "2026-07-09T18:00", "end": "2026-07-09T18:00", "label": "Learn French with l'USB (food, ordering)" },
+          { "start": "2026-07-09T20:15", "end": "2026-07-09T20:15", "label": "Blues, blanc, rouge — live band (Alliance Française du Manitoba) + Quizz" },
+          { "start": "2026-07-23T18:00", "end": "2026-07-23T18:00", "label": "Horseshoe tournament" },
+          { "start": "2026-07-23T19:00", "end": "2026-07-23T19:00", "label": "Café conversation" },
+          { "start": "2026-07-30T17:30", "end": "2026-07-30T17:30", "label": "Atelier cyanotype (workshop)" },
+          { "start": "2026-07-30T18:00", "end": "2026-07-30T18:00", "label": "Learn French with l'USB (family)" }
         ]
+      }
+    },
+    {
+      "id": "rainbow-stage-jcs-2026",
+      "name": "Rainbow Stage — Jesus Christ Superstar",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "2021 Main St, Winnipeg, MB (Kildonan Park)",
+      "lat": 49.928,
+      "lng": -97.13,
+      "cost": "Ticketed — see rainbowstage.ca",
+      "amenities": [],
+      "phone": "204-989-0888",
+      "website": "https://www.rainbowstage.ca",
+      "notes": "From a poster photographed on-site. Run dates only — nightly showtimes not listed on the poster, check rainbowstage.ca for the schedule. Kildonan Park is right around the 4km radius boundary; coordinates are an estimate and may put this just outside the cutoff.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "hours": "June 25 – July 12, 2026",
+        "occurrences": [
+          { "start": "2026-06-25", "end": "2026-07-12", "label": "Jesus Christ Superstar" }
+        ]
+      }
+    },
+    {
+      "id": "manitoba-innovates-lunch-learn-jul28",
+      "name": "Lunch + Learn: From Playing Small to Showing Up",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "423 Main St, 8th Floor (Bison Boardroom), Winnipeg, MB",
+      "lat": 49.8975,
+      "lng": -97.137,
+      "cost": "Unknown — see registration QR code",
+      "amenities": ["Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "Marketing talk for founders with Raez Argulla (Raez Creative), hosted by Manitoba Innovates / Social Entrepreneurship Enclave. In-person at the Bison Boardroom or join online. Optional 30-min Q&A after. From a poster photographed on-site; coordinates are an estimate from the street address.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-28T12:00", "end": "2026-07-28T13:00", "label": "Lunch + Learn (+ optional 30-min Q&A)" }
+        ]
+      }
+    },
+    {
+      "id": "across-the-board-weekly-dnd",
+      "name": "Across the Board Game Café — Weekly D&D Night",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "211 Bannatyne Ave, Unit 105, Winnipeg, MB R3B 1G5",
+      "lat": 49.8988,
+      "lng": -97.1362,
+      "cost": "$12 gaming fee",
+      "amenities": [],
+      "phone": "204-691-3422",
+      "website": "https://acrosstheboardcafe.com/events",
+      "notes": "Adults only, no reservation necessary. From a poster photographed on-site; address confirmed via web search. Coordinates are an estimate from the street address.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "recurring",
+        "recurrence": { "frequency": "weekly", "daysOfWeek": ["Thu"], "timeRange": { "start": "18:00" } },
+        "hours": "Every Thursday, 6pm"
+      }
+    },
+    {
+      "id": "across-the-board-july-events",
+      "name": "Across the Board Game Café — July Special Events",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "211 Bannatyne Ave, Unit 105, Winnipeg, MB R3B 1G5",
+      "lat": 49.8988,
+      "lng": -97.1362,
+      "cost": "Varies — see acrosstheboardcafe.com/events",
+      "amenities": [],
+      "phone": "204-691-3422",
+      "website": "https://acrosstheboardcafe.com/events",
+      "notes": "Beginner D&D is for adult beginners. Family D&D is drop-off-friendly or attend together. Blood on the Clocktower has limited spots. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "followUp": "Trivia Night was listed as a single July 14 date on the poster — unclear if it recurs weekly beyond July. Confirm with the café.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-07T20:30", "end": "2026-07-07T20:30", "label": "Blood on the Clocktower" },
+          { "start": "2026-07-08T18:00", "end": "2026-07-08T18:00", "label": "Beginner D&D" },
+          { "start": "2026-07-12T14:00", "end": "2026-07-12T14:00", "label": "Family D&D" },
+          { "start": "2026-07-14T19:00", "end": "2026-07-14T19:00", "label": "Trivia Night" },
+          { "start": "2026-07-29T20:30", "end": "2026-07-29T20:30", "label": "Blood on the Clocktower" }
+        ]
+      }
+    },
+    {
+      "id": "across-the-board-summer-camps",
+      "name": "Across the Board Game Café — D&D Summer Camps",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "211 Bannatyne Ave, Unit 105, Winnipeg, MB R3B 1G5",
+      "lat": 49.8988,
+      "lng": -97.1362,
+      "cost": "See acrosstheboardcafe.com/events",
+      "amenities": [],
+      "phone": "204-691-3422",
+      "website": "https://acrosstheboardcafe.com/events",
+      "notes": "For kids and teens, led by experienced Dungeon Masters — learn to create a character, paint a miniature, and build your own adventure. Runs weekdays only (Mon–Fri, 11am–3pm) within the date range below; this site doesn't yet model weekday-only sub-patterns, so weekends inside the range may incorrectly show as available.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "hours": "July 6 – August 21, Mon–Fri 11am–3pm",
+        "occurrences": [
+          { "start": "2026-07-06", "end": "2026-08-21", "label": "D&D Summer Camps" }
+        ]
+      }
+    },
+    {
+      "id": "jeudis-franco-heritage-tours",
+      "name": "Jeudis Franco — Saint-Boniface Heritage Tours",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "Saint-Boniface, Winnipeg, MB (meeting point not specified)",
+      "lat": 49.8875,
+      "lng": -97.1233,
+      "cost": "Unknown",
+      "amenities": [],
+      "phone": "",
+      "website": "",
+      "notes": "Arts, music, and walking tours every Thursday in Saint-Boniface, June to August, presented by Patrimoine Histoire Saint-Boniface. Distinct from the CCFM's \"Le Patio 340\" evening program, though both share the \"Jeudis Franco\" branding. From a poster photographed on-site — has a QR code for more info.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Meeting point and specific times are not listed on the poster — confirm via the QR code / Patrimoine Histoire Saint-Boniface before relying on this. Coordinates are a rough Saint-Boniface placeholder, not a real meeting point.",
+      "availability": {
+        "kind": "recurring",
+        "recurrence": { "frequency": "weekly", "daysOfWeek": ["Thu"], "validFrom": "2026-06-01", "validTo": "2026-08-31" },
+        "hours": "Thursdays, June–August — time TBC"
+      }
+    },
+    {
+      "id": "rwb-ballet-in-the-park-2026",
+      "name": "Royal Winnipeg Ballet — Ballet in the Park",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Lyric Theatre, Assiniboine Park, 55 Pavilion Crescent, Winnipeg, MB R3P 2N6",
+      "lat": 49.874,
+      "lng": -97.226,
+      "cost": "Free — no ticket or registration needed",
+      "amenities": ["Free"],
+      "phone": "",
+      "website": "https://www.rwb.org/performance/ballet-in-the-park/",
+      "notes": "RWB Company dancers plus Professional and Recreational Division students. Activities start 6:30pm, performance at 7:30pm, wraps ~8:30pm. Come early for a good seat. Confirmed via web search (rwb.org, Assiniboine Park Conservancy, Classic107) rather than the photographed poster, which had the date partly illegible. Assiniboine Park is well outside the 4km radius from CMHR — this won't show up in the default filtered views.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-28T18:30", "end": "2026-07-28T20:30", "label": "Ballet in the Park — night 1" },
+          { "start": "2026-07-29T18:30", "end": "2026-07-29T20:30", "label": "Ballet in the Park — night 2" },
+          { "start": "2026-07-30T18:30", "end": "2026-07-30T20:30", "label": "Ballet in the Park — night 3" }
+        ]
+      }
+    },
+    {
+      "id": "folklorama-2026",
+      "name": "Folklorama — 55th Anniversary",
+      "metaCategory": "events",
+      "category": "Festival",
+      "address": "Pavilions citywide, Winnipeg, MB (no single venue)",
+      "lat": 49.8928,
+      "lng": -97.1274,
+      "cost": "Varies by pavilion — see folklorama.ca",
+      "amenities": [],
+      "phone": "",
+      "website": "",
+      "notes": "\"Feel the Beat. Live the Culture.\" Winnipeg's two-week multicultural festival runs across dozens of pavilions city-wide — there's no single venue, so the marker is placed symbolically in the Red River near The Forks rather than at a real address. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "No single venue — follow up with the specific pavilion locations/dates you want to track once you've picked which ones, then add each as its own entry with a real address.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-08-02", "end": "2026-08-15", "label": "Folklorama 2026" }
+        ]
+      }
+    },
+    {
+      "id": "winnipeg-comic-book-collectors-show-2026",
+      "name": "Winnipeg Comic Book Collectors Show",
+      "metaCategory": "events",
+      "category": "Festival",
+      "address": "Venue not specified, Winnipeg, MB",
+      "lat": 49.8985,
+      "lng": -97.1355,
+      "cost": "Unknown",
+      "amenities": [],
+      "phone": "",
+      "website": "",
+      "notes": "From a poster photographed on a Fringe-adjacent venue board. Dates read from the poster as August 8th & 9th.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Venue address is not visible in the photo — confirm where this is actually being held before relying on the pin.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-08-08", "end": "2026-08-09", "label": "Winnipeg Comic Book Collectors Show" }
+        ]
+      }
+    },
+    {
+      "id": "winnipeg-fringe-festival-2026",
+      "name": "Winnipeg Fringe Theatre Festival",
+      "metaCategory": "events",
+      "category": "Festival",
+      "address": "Old Market Square, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "Varies by show — outdoor stage at Old Market Square is free",
+      "amenities": ["Free"],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "North America's second-largest Fringe Festival — 170+ companies across venues scattered through the Exchange District and at The Cube. Old Market Square is the festival hub, with free street performers/bands noon–midnight daily. Confirmed via web search (winnipegfringe.com, Exchange District BIZ, Tourism Winnipeg). Individual shows spotted on a venue board are listed as separate entries below.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-15", "end": "2026-07-26", "label": "Winnipeg Fringe Theatre Festival" }
+        ]
+      }
+    },
+    {
+      "id": "fringe-captain-ted-disabled-astronaut",
+      "name": "Captain Ted: Disabled Astronaut",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"Captain Ted: Disabled Astronaut\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "Captain Ted: Disabled Astronaut" }]
+      }
+    },
+    {
+      "id": "fringe-randy-elizabeth-savage-love-story",
+      "name": "Randy & Elizabeth: A Savage Love Story",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"Randy & Elizabeth: A Savage Love Story\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "Randy & Elizabeth: A Savage Love Story" }]
+      }
+    },
+    {
+      "id": "fringe-level-up-fringe",
+      "name": "Level Up Fringe",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"Level Up Fringe\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "Level Up Fringe" }]
+      }
+    },
+    {
+      "id": "fringe-gordon-neill-short-king",
+      "name": "Gordon Neill is Short King",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"Gordon Neill is Short King\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "Gordon Neill is Short King" }]
+      }
+    },
+    {
+      "id": "fringe-sabar",
+      "name": "Sabar — Afro-Contemporary Circus Theatre",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "Circus theatre piece, per the poster's subtitle. From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"Sabar\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "Sabar" }]
+      }
+    },
+    {
+      "id": "fringe-the-first-vampire",
+      "name": "The First Vampire",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"The First Vampire\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "The First Vampire" }]
+      }
+    },
+    {
+      "id": "fringe-lovin-girl",
+      "name": "Lovin' Girl: Busy, Bossy, People Pleasing",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site; title partially legible, double-check exact spelling/punctuation.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime, venue number, and precise title weren't fully legible on the photographed poster — check the Fringe app/program before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "Lovin' Girl: Busy, Bossy, People Pleasing" }]
+      }
+    },
+    {
+      "id": "fringe-1-man-no-show",
+      "name": "1-Man No-Show",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"1-Man No-Show\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "1-Man No-Show" }]
+      }
+    },
+    {
+      "id": "fringe-this-is-a-yellow-poster",
+      "name": "This is a Yellow Poster",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Venue number not confirmed — Winnipeg Fringe Festival, Exchange District, Winnipeg, MB",
+      "lat": 49.9021,
+      "lng": -97.139,
+      "cost": "See winnipegfringe.com for tickets",
+      "amenities": [],
+      "phone": "204-943-7464",
+      "website": "https://www.winnipegfringe.com/",
+      "notes": "Title as printed on the (literally yellow) poster. From a Fringe venue board photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact showtime and venue number weren't legible on the photographed poster — check the Fringe app/program for \"This is a Yellow Poster\" before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-15", "end": "2026-07-26", "label": "This is a Yellow Poster" }]
+      }
+    },
+    {
+      "id": "wpg-climate-organizing-house-meetings",
+      "name": "Winnipeg Climate Organizing — House Meetings",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "No fixed venue — house meetings arranged individually, Winnipeg, MB",
+      "lat": 49.8895,
+      "lng": -97.134,
+      "cost": "Free",
+      "amenities": ["Free"],
+      "phone": "",
+      "website": "",
+      "notes": "Grassroots climate organizing — a house meeting is a small-group organizing format to turn individual concerns into collective action: share concerns, brainstorm goals, plan outreach. No public venue by design; email to get connected and a meeting gets arranged from there. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "availability": {
+        "kind": "always",
+        "hours": "Ongoing — email wpg_climate_organizing@proton.me to join or host a house meeting"
+      }
+    },
+    {
+      "id": "fringe-commensality-project",
+      "name": "The Commensality Project (Alexandra Elliott Dance)",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "The Performance Exchange, 303 Arthur St, Winnipeg, MB (Venue #35)",
+      "lat": 49.9007,
+      "lng": -97.1395,
+      "cost": "$24 advance / $10 at the door",
+      "amenities": ["Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "Dance/theatre piece — \"Dance, theatre, and music lovers will crave this immersive experience embodying family, food, and care.\" 4-star reviewed. Featuring Alex Elliott, Emma Beach, Justine Erickson, Andrés Jiménez Nejia, Dasha Plett, Philip Geller, Brenda McLean, Max Mummery. Air conditioned, physically accessible venue. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "followUp": "Several showtimes were in small, dense print on the poster — double-check exact times (especially July 19 matinee and July 22) via the Fringe program before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-15T19:00", "end": "2026-07-15T19:00", "label": "Performance" },
+          { "start": "2026-07-16T20:45", "end": "2026-07-16T20:45", "label": "Performance" },
+          { "start": "2026-07-17T19:00", "end": "2026-07-17T19:00", "label": "Performance" },
+          { "start": "2026-07-18T20:45", "end": "2026-07-18T20:45", "label": "Performance" },
+          { "start": "2026-07-19T11:00", "end": "2026-07-19T11:00", "label": "Performance (matinee)" },
+          { "start": "2026-07-22T20:45", "end": "2026-07-22T20:45", "label": "Performance" },
+          { "start": "2026-07-24T19:00", "end": "2026-07-24T19:00", "label": "Performance" },
+          { "start": "2026-07-25T19:45", "end": "2026-07-25T19:45", "label": "Performance" },
+          { "start": "2026-07-26T20:45", "end": "2026-07-26T20:45", "label": "Performance" }
+        ]
+      }
+    },
+    {
+      "id": "fringe-panic-live-radio-musical",
+      "name": "PANIC — A Live Radio Musical (Canadian Premiere)",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "Théâtre Cercle Molière, 340 Provencher Blvd, Winnipeg, MB (Venue #3)",
+      "lat": 49.889,
+      "lng": -97.1213,
+      "cost": "See dramatictheatre.net / Fringe program for tickets",
+      "amenities": ["Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "By Stephen Dolginoff, presented by Panic Players in partnership with North Kildonan Community Players. Air conditioning, free parking. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "followUp": "The July 22 showtime (12:45) was partially unclear on the poster (AM/PM) — double-check via the Fringe program before planning around this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-15T18:00", "end": "2026-07-15T18:00", "label": "Performance" },
+          { "start": "2026-07-17T16:15", "end": "2026-07-17T16:15", "label": "Performance" },
+          { "start": "2026-07-19T11:00", "end": "2026-07-19T11:00", "label": "Performance" },
+          { "start": "2026-07-22T12:45", "end": "2026-07-22T12:45", "label": "Performance" },
+          { "start": "2026-07-24T20:45", "end": "2026-07-24T20:45", "label": "Performance" },
+          { "start": "2026-07-25T19:45", "end": "2026-07-25T19:45", "label": "Performance" },
+          { "start": "2026-07-26T15:00", "end": "2026-07-26T15:00", "label": "Performance" }
+        ]
+      }
+    },
+    {
+      "id": "rythmes-de-lunite-2026",
+      "name": "Rythmes de l'Unité / Rhythms of Unity — Family Festival",
+      "metaCategory": "events",
+      "category": "Festival",
+      "address": "Venue not confirmed — likely Centre culturel franco-manitobain area, Winnipeg, MB",
+      "lat": 49.889,
+      "lng": -97.1213,
+      "cost": "Free — Entrée Gratuite",
+      "amenities": ["Free"],
+      "phone": "",
+      "website": "",
+      "notes": "Family event hosted by GenieTheMC with CCFM, Altered Minds Inc., Alliance Française, and others as partners. Kids activities, Afrobeat workshops, stand-up/comedy, drumming circles, African acrobatics and dance, African cuisine — \"uniting communities through Francophonie.\" From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Exact date wasn't fully legible on the photographed poster (only \"July\" is clear) and the specific venue isn't explicitly stated beyond CCFM being a listed partner — confirm both before relying on this.",
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": []
+      }
+    },
+    {
+      "id": "fringe-rocky-horror-show",
+      "name": "The Rocky Horror Show — 50th Anniversary",
+      "metaCategory": "events",
+      "category": "Theatre",
+      "address": "John Hirsch Mainstage, 174 Market Ave, Winnipeg, MB (Venue #1)",
+      "lat": 49.8985,
+      "lng": -97.1367,
+      "cost": "$14 general admission",
+      "amenities": [],
+      "phone": "",
+      "website": "https://dramatictheatre.net",
+      "notes": "Richard O'Brien's Rocky Horror Show, presented by The Dramatic Theatre Company in partnership with North Kildonan Community Players — celebrating 50 years of Rocky Horror. From a poster photographed on-site; venue address is a reasonable estimate for the John Hirsch Mainstage, not independently confirmed.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-16T11:00", "end": "2026-07-16T11:00", "label": "Performance" },
+          { "start": "2026-07-18T22:00", "end": "2026-07-18T22:00", "label": "Performance" },
+          { "start": "2026-07-20T18:15", "end": "2026-07-20T18:15", "label": "Performance" },
+          { "start": "2026-07-21T11:00", "end": "2026-07-21T11:00", "label": "Performance" },
+          { "start": "2026-07-23T20:30", "end": "2026-07-23T20:30", "label": "Performance" },
+          { "start": "2026-07-25T16:15", "end": "2026-07-25T16:15", "label": "Performance" },
+          { "start": "2026-07-26T18:30", "end": "2026-07-26T18:30", "label": "Performance" }
+        ]
+      }
+    },
+    {
+      "id": "canadian-immigrant-fair-winnipeg-2026",
+      "name": "Canadian Immigrant Fair — Winnipeg",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "Radisson Hotel Winnipeg Downtown, 288 Portage Ave, Winnipeg, MB",
+      "lat": 49.8952,
+      "lng": -97.1435,
+      "cost": "Free",
+      "amenities": ["Free", "Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "Career fair and speakers' series for skilled immigrants, newcomers, temporary workers, international students, and all Canadians. Register online. From a poster photographed on-site; already in the past relative to today (July 13) — kept for reference, watch for a recurring/future edition.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-10T09:00", "end": "2026-07-10T17:00", "label": "Canadian Immigrant Fair" }]
+      }
+    },
+    {
+      "id": "edge-career-program",
+      "name": "EDGE Career Program",
+      "metaCategory": "services",
+      "category": "Employment Support",
+      "address": "535 St. Anne's Rd, Winnipeg, MB (as read from poster — double-check)",
+      "lat": 49.83,
+      "lng": -97.1,
+      "cost": "Free",
+      "amenities": [],
+      "phone": "",
+      "website": "",
+      "notes": "Free job training & pre-employment program. Eligibility: adults on EI or EIA, low-income adults, unemployed/underemployed individuals, permanent residents & refugees, Canadian citizens & work permit holders. \"Only a few spots left\" per the poster — contact soon. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "Phone number, extension, and exact street address were in small print on the photographed poster and aren't fully confirmed — verify before relying on this. Coordinates are a rough estimate for St. Anne's Rd and likely well outside the 4km radius.",
+      "availability": {
+        "kind": "always",
+        "hours": "Ongoing enrollment — contact to register, limited spots"
+      }
+    },
+    {
+      "id": "ecrc-resume-workshop-jul6",
+      "name": "Jobs 101: Resume Workshop (ECRC)",
+      "metaCategory": "services",
+      "category": "Employment Support",
+      "address": "545 Watt St, Winnipeg, MB",
+      "lat": 49.9075,
+      "lng": -97.105,
+      "cost": "Free",
+      "amenities": ["Free"],
+      "phone": "204-982-1720 ext 213",
+      "website": "",
+      "notes": "\"The Good, the Bad, the Hired\" — learn how to create a strong, professional resume that highlights your skills, experience, and strengths. Snacks and bus tickets available. Register with JP at dropinsupport@elmwoodcrc.ca. Hosted by Elmwood Community Resource Centre (ECRC). From a poster photographed on-site; already in the past relative to today (July 13) — kept for reference, watch for a repeat session.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-06T17:30", "end": "2026-07-06T19:30", "label": "Resume Workshop" }]
+      }
+    },
+    {
+      "id": "ofe-employment-services",
+      "name": "Opportunities for Employment (OFE) — Free Employment Services",
+      "metaCategory": "services",
+      "category": "Employment Support",
+      "address": "294 Portage Ave, Suite 300, Winnipeg, MB R3C 0B9",
+      "lat": 49.8944,
+      "lng": -97.1445,
+      "cost": "Free",
+      "amenities": ["Free"],
+      "phone": "204-925-3490",
+      "website": "https://ofe.ca",
+      "notes": "One-on-one consultation, resume & interview prep, job resource centre access, job search preparation, computer skills, certificates/workshops, employer connections. Eligibility: 16+, valid SIN, resides in Winnipeg, unemployed or working under 20 hrs/wk. 30,000+ people hired since 1996. From a poster photographed on-site; address/phone corrected via web search — the poster's small print was partially misread on-site (initially looked like \"des Meurons Ave\").",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "always",
+        "hours": "See ofe.ca for hours — walk-in employment services"
+      }
+    },
+    {
+      "id": "nine-circles-coffee-talks",
+      "name": "Coffee Talks (Nine Circles)",
+      "metaCategory": "services",
+      "category": "Health",
+      "address": "705 Broadway, Winnipeg, MB R3G 0X2",
+      "lat": 49.8848,
+      "lng": -97.1477,
+      "cost": "Free",
+      "amenities": ["Free"],
+      "phone": "204-940-8263",
+      "website": "",
+      "notes": "Community-led drop-in social space — \"where as much or as little as you would like.\" All are welcome; bring a topic, skill, or interest to share if you like. Contact Kristen. From a poster photographed on-site; address assumed to be Nine Circles' main Broadway location since the poster itself didn't list one — confirmed via web search that this is Nine Circles' address, but not that Coffee Talks specifically happens there.",
+      "verified": false,
+      "lastVerified": null,
+      "followUp": "The poster didn't list a room/location within the building, and the phone number/contact spelling was small print — double check both before relying on this.",
+      "availability": {
+        "kind": "recurring",
+        "recurrence": { "frequency": "weekly", "daysOfWeek": ["Wed"], "timeRange": { "start": "10:30", "end": "12:00" } },
+        "hours": "Every Wednesday, 10:30am–12:00pm"
+      }
+    },
+    {
+      "id": "resilient-circle-support-group",
+      "name": "Resilient Circle — Substance Use Support Group",
+      "metaCategory": "services",
+      "category": "Health",
+      "address": "Venue not confirmed, Winnipeg, MB",
+      "lat": 49.8988,
+      "lng": -97.1362,
+      "cost": "Free",
+      "amenities": ["Free"],
+      "phone": "",
+      "website": "",
+      "notes": "Peer support group for people who use substances or have a loved one who does — build coping skills, learn about substance use and mental health, develop healthy relationships and self, build resilience and confidence. Safe, respectful, welcoming space. Snacks and bus tickets provided. From a poster photographed on-site.",
+      "verified": false,
+      "lastVerified": null,
+      "symbolicLocation": true,
+      "followUp": "The hosting organization and venue address weren't clearly legible on the photographed poster — confirm both, plus the exact contact info, before relying on this.",
+      "availability": {
+        "kind": "recurring",
+        "recurrence": { "frequency": "weekly", "daysOfWeek": ["Tue"], "timeRange": { "start": "17:00", "end": "19:00" }, "validFrom": "2026-06-30", "validTo": "2026-07-28" },
+        "hours": "Tuesdays, 5–7pm, June 30 – July 28"
+      }
+    },
+    {
+      "id": "john-howard-record-suspensions-jul9",
+      "name": "Record Suspensions (Pardons) Info Session — John Howard Society",
+      "metaCategory": "events",
+      "category": "Community Event",
+      "address": "Millennium Library, 251 Donald St, Winnipeg, MB",
+      "lat": 49.8946,
+      "lng": -97.1423,
+      "cost": "Free",
+      "amenities": ["Free", "Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "Drop-in info session — find out if you may be eligible to have your criminal record cleared. Caseworkers available for an assessment and possible next steps. From a poster photographed on-site (previously skipped as cut off in an earlier photo; now fully legible). Already in the past relative to today (July 13) — kept for reference, watch for a repeat session.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [{ "start": "2026-07-09T11:00", "end": "2026-07-09T14:00", "label": "Record Suspensions Info Session" }]
       }
     }
   ]

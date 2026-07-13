@@ -115,13 +115,25 @@ function renderMarkers() {
     `${visible.length} location${visible.length === 1 ? "" : "s"} shown`;
 
   visible.forEach((entry) => {
-    const marker = L.marker([entry.lat, entry.lng]).addTo(leafletMap);
+    const marker = entry.symbolicLocation
+      ? L.circleMarker([entry.lat, entry.lng], {
+          radius: 12,
+          color: "#e0a34f",
+          weight: 2,
+          dashArray: "4 3",
+          fillColor: "#e0a34f",
+          fillOpacity: 0.15,
+        }).addTo(leafletMap)
+      : L.marker([entry.lat, entry.lng]).addTo(leafletMap);
+
     marker.bindPopup(`
       <div class="popup-title">${entry.name}</div>
       ${metaCategoryName(mapState.data, entry.metaCategory)} · ${entry.category} · ${entry.distanceKm.toFixed(1)}km away<br>
+      ${entry.symbolicLocation ? '<span class="tag unverified">Approximate/placeholder location</span><br>' : ""}
       ${entry.address}<br>
       ${entry.cost || ""}<br>
       <span class="availability-text">${describeAvailability(entry)}</span>
+      ${entry.followUp ? `<p class="followup-note">⚑ ${entry.followUp}</p>` : ""}
       <div class="card-controls">
         <label class="interest-label">My interest ${interestSelectHtml(entry.id)}</label>
       </div>

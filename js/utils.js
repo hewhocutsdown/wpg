@@ -77,7 +77,9 @@ function renderEntryCardHtml(entry, data) {
       <div class="resource-tags">
         ${entry.amenities.map((a) => `<span class="tag">${a}</span>`).join("")}
         ${entry.verified ? "" : '<span class="tag unverified">Unverified</span>'}
+        ${entry.symbolicLocation ? '<span class="tag unverified">Approximate/placeholder location</span>' : ""}
       </div>
+      ${entry.followUp ? `<p class="followup-note">⚑ Follow-up needed: ${entry.followUp}</p>` : ""}
       <div class="card-controls">
         <label class="interest-label">My interest ${interestSelectHtml(entry.id)}</label>
       </div>
