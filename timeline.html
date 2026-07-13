@@ -3,17 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Winnipeg Resources</title>
-  <meta name="description" content="Free and low-cost services, culture, events, and recreation within 4km of the Canadian Museum for Human Rights in Winnipeg." />
+  <title>Winnipeg Resources — Timeline</title>
+  <meta name="description" content="What's ongoing or coming up within 4km of the Canadian Museum for Human Rights in Winnipeg." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="index.html">Winnipeg Resources</a>
     <nav>
-      <a href="index.html" class="active">List</a>
+      <a href="index.html">List</a>
       <a href="map/index.html">Map</a>
-      <a href="timeline.html">Timeline</a>
+      <a href="timeline.html" class="active">Timeline</a>
     </nav>
     <div class="interest-io">
       <button id="export-interests" class="io-btn" type="button">Export interests</button>
@@ -24,8 +24,8 @@
 
   <main>
     <p class="tagline">
-      Free and low-cost services, culture, events, and recreation within 4km
-      of the Canadian Museum for Human Rights. Sorted by distance.
+      What's ongoing now, and what's coming up, within 4km of the Canadian
+      Museum for Human Rights.
     </p>
 
     <div class="filter-group">
@@ -50,7 +50,7 @@
     </div>
 
     <p class="resource-count" id="resource-count">Loading…</p>
-    <div class="resource-list" id="resource-list"></div>
+    <div id="timeline"></div>
   </main>
 
   <footer class="site-footer">
@@ -62,6 +62,6 @@
   <script src="js/utils.js"></script>
   <script src="js/availability.js"></script>
   <script src="js/interests.js"></script>
-  <script src="js/list.js"></script>
+  <script src="js/timeline.js"></script>
 </body>
 </html>

@@ -1,8 +1,20 @@
+const TIME_OPTIONS = [
+  { value: "today", label: "Today" },
+  { value: "week", label: "This Week" },
+  { value: "month", label: "This Month" },
+  { value: "upcoming", label: "Upcoming" },
+];
+
+const INTEREST_OPTIONS = [...INTEREST_STATUSES, "unset"];
+
 const mapState = {
   data: null,
   markers: [],
+  activeMeta: new Set(),
   activeCategories: new Set(),
+  activeTime: new Set(),
   activeAmenities: new Set(),
+  activeInterest: new Set(),
 };
 
 let leafletMap;
@@ -18,6 +30,8 @@ function initMap(center) {
   L.marker([center.lat, center.lng])
     .addTo(leafletMap)
     .bindPopup(`<div class="popup-title">${center.name}</div>${center.address || ""}`);
+
+  leafletMap.on("popupopen", (e) => bindInterestSelects(e.popup.getElement()));
 }
 
 function drawRadius(center, radiusKm) {
@@ -29,48 +43,66 @@ function drawRadius(center, radiusKm) {
   }).addTo(leafletMap);
 }
 
-function renderFilters(data) {
-  const catWrap = document.getElementById("category-filters");
-  data.categories.forEach((cat) => {
-    const btn = document.createElement("button");
-    btn.className = "filter-btn";
-    btn.textContent = cat;
-    btn.addEventListener("click", () => {
-      toggle(mapState.activeCategories, cat);
-      btn.classList.toggle("active");
-      renderMarkers();
-    });
-    catWrap.appendChild(btn);
-  });
-
-  const amenWrap = document.getElementById("amenity-filters");
-  data.amenities.forEach((am) => {
-    const btn = document.createElement("button");
-    btn.className = "filter-btn";
-    btn.textContent = am;
-    btn.addEventListener("click", () => {
-      toggle(mapState.activeAmenities, am);
-      btn.classList.toggle("active");
-      renderMarkers();
-    });
-    amenWrap.appendChild(btn);
-  });
+function categoryOptionsForActiveMeta() {
+  const metas = mapState.activeMeta.size
+    ? mapState.data.metaCategories.filter((m) => mapState.activeMeta.has(m.id))
+    : mapState.data.metaCategories;
+  return [...new Set(metas.flatMap((m) => m.categories))];
 }
 
-function toggle(set, value) {
-  if (set.has(value)) set.delete(value);
-  else set.add(value);
-}
-
-function matchesFilters(resource) {
-  if (!withinRadius(resource, mapState.data.radiusKm)) return false;
-  if (mapState.activeCategories.size && !mapState.activeCategories.has(resource.category)) {
-    return false;
+function renderCategoryFilters() {
+  const options = categoryOptionsForActiveMeta();
+  for (const c of [...mapState.activeCategories]) {
+    if (!options.includes(c)) mapState.activeCategories.delete(c);
   }
+  renderFilterButtons(document.getElementById("category-filters"), options, mapState.activeCategories, {
+    onChange: renderMarkers,
+  });
+}
+
+function renderFilters(data) {
+  const metaOptions = data.metaCategories.map((m) => ({ value: m.id, label: m.name }));
+  renderFilterButtons(document.getElementById("metacategory-filters"), metaOptions, mapState.activeMeta, {
+    onChange: () => {
+      renderCategoryFilters();
+      renderMarkers();
+    },
+  });
+
+  renderCategoryFilters();
+
+  renderFilterButtons(document.getElementById("time-filters"), TIME_OPTIONS, mapState.activeTime, {
+    multi: false,
+    onChange: renderMarkers,
+  });
+
+  renderFilterButtons(document.getElementById("amenity-filters"), data.amenities, mapState.activeAmenities, {
+    onChange: renderMarkers,
+  });
+
+  renderFilterButtons(document.getElementById("interest-filters"), INTEREST_OPTIONS, mapState.activeInterest, {
+    onChange: renderMarkers,
+  });
+}
+
+function matchesFilters(entry) {
+  if (!withinRadius(entry, mapState.data.radiusKm)) return false;
+  if (mapState.activeMeta.size && !mapState.activeMeta.has(entry.metaCategory)) return false;
+  if (mapState.activeCategories.size && !mapState.activeCategories.has(entry.category)) return false;
+
+  const timeScope = [...mapState.activeTime][0] || null;
+  if (!matchesTimeScope(entry, timeScope, new Date())) return false;
+
   if (mapState.activeAmenities.size) {
-    const has = [...mapState.activeAmenities].every((a) => resource.amenities.includes(a));
+    const has = [...mapState.activeAmenities].every((a) => entry.amenities.includes(a));
     if (!has) return false;
   }
+
+  if (mapState.activeInterest.size) {
+    const interest = getInterest(entry.id) || "unset";
+    if (!mapState.activeInterest.has(interest)) return false;
+  }
+
   return true;
 }
 
@@ -78,23 +110,30 @@ function renderMarkers() {
   mapState.markers.forEach((m) => leafletMap.removeLayer(m));
   mapState.markers = [];
 
-  const visible = mapState.data.resources.filter(matchesFilters);
+  const visible = mapState.data.entries.filter(matchesFilters);
   document.getElementById("resource-count").textContent =
     `${visible.length} location${visible.length === 1 ? "" : "s"} shown`;
 
-  visible.forEach((r) => {
-    const marker = L.marker([r.lat, r.lng]).addTo(leafletMap);
+  visible.forEach((entry) => {
+    const marker = L.marker([entry.lat, entry.lng]).addTo(leafletMap);
     marker.bindPopup(`
-      <div class="popup-title">${r.name}</div>
-      ${r.category} · ${r.distanceKm.toFixed(1)}km away<br>
-      ${r.address}<br>
-      ${r.cost || ""} ${r.hours ? "· " + r.hours : ""}
+      <div class="popup-title">${entry.name}</div>
+      ${metaCategoryName(mapState.data, entry.metaCategory)} · ${entry.category} · ${entry.distanceKm.toFixed(1)}km away<br>
+      ${entry.address}<br>
+      ${entry.cost || ""}<br>
+      <span class="availability-text">${describeAvailability(entry)}</span>
+      <div class="card-controls">
+        <label class="interest-label">My interest ${interestSelectHtml(entry.id)}</label>
+      </div>
     `);
     mapState.markers.push(marker);
   });
 }
 
-loadResources("../data/resources.json")
+bindInterestControls();
+document.addEventListener("wpg-interests-changed", renderMarkers);
+
+loadEntries("../data/entries.json")
   .then((data) => {
     mapState.data = data;
     initMap(data.center);

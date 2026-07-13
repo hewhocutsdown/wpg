@@ -1,85 +1,99 @@
+const TIME_OPTIONS = [
+  { value: "today", label: "Today" },
+  { value: "week", label: "This Week" },
+  { value: "month", label: "This Month" },
+  { value: "upcoming", label: "Upcoming" },
+];
+
+const INTEREST_OPTIONS = [...INTEREST_STATUSES, "unset"];
+
 const state = {
   data: null,
+  activeMeta: new Set(),
   activeCategories: new Set(),
+  activeTime: new Set(),
   activeAmenities: new Set(),
+  activeInterest: new Set(),
 };
 
-function renderFilters(data) {
-  const catWrap = document.getElementById("category-filters");
-  data.categories.forEach((cat) => {
-    const btn = document.createElement("button");
-    btn.className = "filter-btn";
-    btn.textContent = cat;
-    btn.dataset.category = cat;
-    btn.addEventListener("click", () => {
-      toggle(state.activeCategories, cat);
-      btn.classList.toggle("active");
-      render();
-    });
-    catWrap.appendChild(btn);
-  });
-
-  const amenWrap = document.getElementById("amenity-filters");
-  data.amenities.forEach((am) => {
-    const btn = document.createElement("button");
-    btn.className = "filter-btn";
-    btn.textContent = am;
-    btn.dataset.amenity = am;
-    btn.addEventListener("click", () => {
-      toggle(state.activeAmenities, am);
-      btn.classList.toggle("active");
-      render();
-    });
-    amenWrap.appendChild(btn);
-  });
+function categoryOptionsForActiveMeta() {
+  const metas = state.activeMeta.size
+    ? state.data.metaCategories.filter((m) => state.activeMeta.has(m.id))
+    : state.data.metaCategories;
+  return [...new Set(metas.flatMap((m) => m.categories))];
 }
 
-function toggle(set, value) {
-  if (set.has(value)) set.delete(value);
-  else set.add(value);
-}
-
-function matchesFilters(resource) {
-  if (!withinRadius(resource, state.data.radiusKm)) return false;
-  if (state.activeCategories.size && !state.activeCategories.has(resource.category)) {
-    return false;
+function renderCategoryFilters() {
+  const options = categoryOptionsForActiveMeta();
+  for (const c of [...state.activeCategories]) {
+    if (!options.includes(c)) state.activeCategories.delete(c);
   }
+  renderFilterButtons(document.getElementById("category-filters"), options, state.activeCategories, {
+    onChange: render,
+  });
+}
+
+function renderFilters(data) {
+  const metaOptions = data.metaCategories.map((m) => ({ value: m.id, label: m.name }));
+  renderFilterButtons(document.getElementById("metacategory-filters"), metaOptions, state.activeMeta, {
+    onChange: () => {
+      renderCategoryFilters();
+      render();
+    },
+  });
+
+  renderCategoryFilters();
+
+  renderFilterButtons(document.getElementById("time-filters"), TIME_OPTIONS, state.activeTime, {
+    multi: false,
+    onChange: render,
+  });
+
+  renderFilterButtons(document.getElementById("amenity-filters"), data.amenities, state.activeAmenities, {
+    onChange: render,
+  });
+
+  renderFilterButtons(document.getElementById("interest-filters"), INTEREST_OPTIONS, state.activeInterest, {
+    onChange: render,
+  });
+}
+
+function matchesFilters(entry) {
+  if (!withinRadius(entry, state.data.radiusKm)) return false;
+  if (state.activeMeta.size && !state.activeMeta.has(entry.metaCategory)) return false;
+  if (state.activeCategories.size && !state.activeCategories.has(entry.category)) return false;
+
+  const timeScope = [...state.activeTime][0] || null;
+  if (!matchesTimeScope(entry, timeScope, new Date())) return false;
+
   if (state.activeAmenities.size) {
-    const has = [...state.activeAmenities].every((a) => resource.amenities.includes(a));
+    const has = [...state.activeAmenities].every((a) => entry.amenities.includes(a));
     if (!has) return false;
   }
+
+  if (state.activeInterest.size) {
+    const interest = getInterest(entry.id) || "unset";
+    if (!state.activeInterest.has(interest)) return false;
+  }
+
   return true;
 }
 
 function render() {
   const list = document.getElementById("resource-list");
   const count = document.getElementById("resource-count");
-  list.innerHTML = "";
 
-  const visible = state.data.resources.filter(matchesFilters);
+  const visible = state.data.entries.filter(matchesFilters);
   count.textContent = `${visible.length} location${visible.length === 1 ? "" : "s"} within ${state.data.radiusKm}km of the ${state.data.center.name}`;
 
-  visible.forEach((r) => {
-    const card = document.createElement("article");
-    card.className = "resource-card";
-    card.innerHTML = `
-      <h3>${r.name}</h3>
-      <div class="resource-meta">
-        ${r.category} · ${r.distanceKm.toFixed(1)}km away · ${r.cost || "Cost unknown"}
-      </div>
-      <div>${r.address}</div>
-      ${r.hours ? `<div class="resource-meta">${r.hours}</div>` : ""}
-      ${r.notes ? `<p>${r.notes}</p>` : ""}
-      <div class="resource-tags">
-        ${r.amenities.map((a) => `<span class="tag">${a}</span>`).join("")}
-        ${r.verified ? "" : '<span class="tag unverified">Unverified</span>'}
-      </div>
-    `;
-    list.appendChild(card);
-  });
+  list.innerHTML = visible.map((e) => renderEntryCardHtml(e, state.data)).join("");
+  bindInterestSelects(list);
 }
 
-loadResources("data/resources.json")
+bindInterestControls();
+document.addEventListener("wpg-interests-changed", render);
+
+loadEntries("data/entries.json")
   .then((data) => {
     state.data = data;
     renderFilters(data);

@@ -1,0 +1,120 @@
+{
+  "center": {
+    "name": "Canadian Museum for Human Rights",
+    "address": "85 Israel Asper Way, Winnipeg, MB R3C 0L5",
+    "lat": 49.8906,
+    "lng": -97.1305
+  },
+  "radiusKm": 4,
+  "metaCategories": [
+    {
+      "id": "services",
+      "name": "Essential Services",
+      "categories": ["Shelter", "Meal", "Library", "Washroom", "Shower", "Health", "Warming Centre", "Coworking"]
+    },
+    {
+      "id": "culture",
+      "name": "Culture & Museums",
+      "categories": ["Museum", "Gallery", "Historic Site"]
+    },
+    {
+      "id": "events",
+      "name": "Live Events & Entertainment",
+      "categories": ["Concert", "Festival", "Theatre", "Comedy", "Film"]
+    },
+    {
+      "id": "recreation",
+      "name": "Recreation & Outdoors",
+      "categories": ["Park", "Pool", "Trail", "Sports Facility"]
+    }
+  ],
+  "amenities": ["24/7", "Free", "WiFi", "Shower", "Wheelchair Accessible"],
+  "entries": [
+    {
+      "id": "example-service",
+      "name": "Example Library Branch — replace with verified data",
+      "metaCategory": "services",
+      "category": "Library",
+      "address": "000 Placeholder St, Winnipeg, MB",
+      "lat": 49.8846,
+      "lng": -97.1355,
+      "cost": "Free",
+      "amenities": ["WiFi", "Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "Template for an always-open resource (kind: always). Duplicate and fill in verified details.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "always",
+        "hours": "Mon–Fri 9am–5pm, Sat 10am–4pm"
+      }
+    },
+    {
+      "id": "example-culture",
+      "name": "Example Museum Free Day — replace with verified data",
+      "metaCategory": "culture",
+      "category": "Museum",
+      "address": "111 Placeholder Ave, Winnipeg, MB",
+      "lat": 49.8927,
+      "lng": -97.1439,
+      "cost": "Free on qualifying days, otherwise paid admission",
+      "amenities": ["Wheelchair Accessible"],
+      "phone": "",
+      "website": "",
+      "notes": "Template for a monthly-recurring resource (kind: recurring, frequency: monthly). Duplicate and fill in verified details.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "recurring",
+        "recurrence": { "frequency": "monthly", "nth": 1, "dayOfWeek": "Wed" },
+        "hours": "Free admission, first Wednesday of each month, 10am–5pm"
+      }
+    },
+    {
+      "id": "example-recreation",
+      "name": "Example Outdoor Pool — replace with verified data",
+      "metaCategory": "recreation",
+      "category": "Pool",
+      "address": "222 Placeholder Cres, Winnipeg, MB",
+      "lat": 49.8781,
+      "lng": -97.1443,
+      "cost": "Free",
+      "amenities": ["Shower"],
+      "phone": "",
+      "website": "",
+      "notes": "Template for a seasonal resource (kind: seasonal). Duplicate and fill in verified details.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "seasonal",
+        "season": { "startMonthDay": "06-01", "endMonthDay": "09-05" },
+        "hours": "Daily 10am–8pm, in season"
+      }
+    },
+    {
+      "id": "example-event",
+      "name": "Example Festival Showing — replace with verified data",
+      "metaCategory": "events",
+      "category": "Festival",
+      "address": "333 Placeholder Blvd, Winnipeg, MB",
+      "lat": 49.8896,
+      "lng": -97.1508,
+      "cost": "$15",
+      "amenities": [],
+      "phone": "",
+      "website": "",
+      "notes": "Template for a one-off/short-run event (kind: scheduled). Duplicate and fill in verified details.",
+      "verified": false,
+      "lastVerified": null,
+      "availability": {
+        "kind": "scheduled",
+        "occurrences": [
+          { "start": "2026-07-13T19:00", "end": "2026-07-13T21:00", "label": "Opening night" },
+          { "start": "2026-07-25T19:00", "end": "2026-07-25T21:00", "label": "Second showing" },
+          { "start": "2026-09-01T19:00", "end": "2026-09-01T21:00", "label": "Closing night" }
+        ]
+      }
+    }
+  ]
+}
