@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winnipeg Resources</title>
+  <meta name="description" content="Free and low-cost resources within 4km of the Canadian Museum for Human Rights in Winnipeg." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html">Winnipeg Resources</a>
+    <nav>
+      <a href="index.html" class="active">List</a>
+      <a href="map/index.html">Map</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tagline">
+      Free and low-cost facilities, meals, and services within 4km of the
+      Canadian Museum for Human Rights. Sorted by distance.
+    </p>
+
+    <div class="filters" id="category-filters"></div>
+    <div class="filters" id="amenity-filters"></div>
+
+    <p class="resource-count" id="resource-count">Loading…</p>
+    <div class="resource-list" id="resource-list"></div>
+  </main>
+
+  <footer class="site-footer">
+    Built for Winnipeg. Data should be verified before relying on it —
+    see the <a href="https://github.com/hewhocutsdown/wpg">source repo</a> to contribute.
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>

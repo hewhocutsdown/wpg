@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Winnipeg Resources — Map</title>
+  <meta name="description" content="Map of free and low-cost resources within 4km of the Canadian Museum for Human Rights in Winnipeg." />
+  <link rel="stylesheet" href="../css/style.css" />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../index.html">Winnipeg Resources</a>
+    <nav>
+      <a href="../index.html">List</a>
+      <a href="index.html" class="active">Map</a>
+    </nav>
+  </header>
+
+  <main>
+    <p class="tagline">
+      Free and low-cost facilities, meals, and services within 4km of the
+      Canadian Museum for Human Rights.
+    </p>
+
+    <div class="filters" id="category-filters"></div>
+    <div class="filters" id="amenity-filters"></div>
+
+    <p class="resource-count" id="resource-count">Loading…</p>
+    <div id="map"></div>
+  </main>
+
+  <footer class="site-footer">
+    Built for Winnipeg. Data should be verified before relying on it —
+    see the <a href="https://github.com/hewhocutsdown/wpg">source repo</a> to contribute.
+  </footer>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+  ></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/map.js"></script>
+</body>
+</html>
